@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sturuvek <sturuvek@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 15:45:04 by sturuvek          #+#    #+#             */
-/*   Updated: 2026/04/29 17:39:33 by sturuvek         ###   ########.fr       */
+/*   Created: 2026/04/29 17:52:36 by sturuvek          #+#    #+#             */
+/*   Updated: 2026/04/29 17:54:39 by sturuvek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void*	ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strrchr(char *src, int n)
 {
-	unsigned char	*xdest;
-	unsigned char	*xsrc;
-
-	xdest = dest;
-	xsrc = src;
-	while(n > 0)
+	char	*x;
+	
+	while(*src)
 	{
-		*xdest = *xsrc;
-		xdest++;
-		xsrc++;
+		if(*src == n)
+		{
+			x = src;
+		}
+		src++;
 	}
-	return (dest);
+	return (x);
 }

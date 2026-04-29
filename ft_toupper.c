@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sturuvek <sturuvek@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 15:45:04 by sturuvek          #+#    #+#             */
-/*   Updated: 2026/04/29 17:39:33 by sturuvek         ###   ########.fr       */
+/*   Created: 2026/04/29 17:40:55 by sturuvek          #+#    #+#             */
+/*   Updated: 2026/04/29 17:43:09 by sturuvek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void*	ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_toupper(int n)
 {
-	unsigned char	*xdest;
-	unsigned char	*xsrc;
-
-	xdest = dest;
-	xsrc = src;
-	while(n > 0)
-	{
-		*xdest = *xsrc;
-		xdest++;
-		xsrc++;
-	}
-	return (dest);
+	if(n >= 97 && n < 123)
+		n -= 32;
+	return (n);
 }
