@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+
 void	*ft_memmove(void *src, const void *dest, size_t n)
 {
 	unsigned char	*temp;

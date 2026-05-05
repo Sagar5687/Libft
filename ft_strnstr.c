@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 static int	substring_check(char *temp1, char *temp2, size_t n)
 {
 	while (*temp1 && n > 0)
