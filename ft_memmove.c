@@ -10,4 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+void	*ft_memmove(void *src, const void *dest, size_t n)
+{
+	unsigned char	*temp;
+	unsigned char	*xsrc;
+	unsigned char	*xdest;
+	size_t	tempn;
+	size_t	i;
+	size_t	j;
 
+	temp = malloc(n);
+	if (!temp)
+		return (NULL);
+	xsrc = (unsigned char *)src;
+	xdest = (unsigned char *)dest;
+	i = 0;
+	while(n > 0)
+	{
+		temp[i] = xsrc[i];
+		i++;
+		n--;
+	}
+	j = 0;
+	while(j < i)
+	{
+		temp[j] = xdest[j];
+		j++;
+	}
+	return (dest);
+}
