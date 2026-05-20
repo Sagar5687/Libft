@@ -14,10 +14,10 @@
 
 char	*ft_stchr(char *src, int n)
 {
-	while(*src)
+	while (*src)
 	{
-		if(*src == n)
-			break;
+		if (*src == n)
+			break ;
 		src++;
 	}
 	return (src);

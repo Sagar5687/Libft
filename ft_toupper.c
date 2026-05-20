@@ -14,7 +14,7 @@
 
 int	ft_toupper(int n)
 {
-	if(n >= 97 && n < 123)
+	if (n >= 97 && n < 123)
 		n -= 32;
 	return (n);
 }

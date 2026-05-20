@@ -17,7 +17,7 @@ int	ft_strlen(char *c)
 	int	len;
 
 	len = 0;
-	while(*c)
+	while (*c)
 	{
 		len++;
 		c++;

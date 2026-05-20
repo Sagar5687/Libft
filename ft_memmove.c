@@ -6,7 +6,7 @@
 /*   By: sturuvek <sturuvek@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 17:39:44 by sturuvek          #+#    #+#             */
-/*   Updated: 2026/04/29 17:40:47 by sturuvek         ###   ########.fr       */
+/*   Updated: 2026/05/20 18:51:45 by sturuvek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	*ft_memmove(void *src, const void *dest, size_t n)
 	unsigned char	*temp;
 	unsigned char	*xsrc;
 	unsigned char	*xdest;
-	size_t	tempn;
 	size_t	i;
 	size_t	j;
 
@@ -27,14 +26,14 @@ void	*ft_memmove(void *src, const void *dest, size_t n)
 	xsrc = (unsigned char *)src;
 	xdest = (unsigned char *)dest;
 	i = 0;
-	while(n > 0)
+	while (n > 0)
 	{
 		temp[i] = xsrc[i];
 		i++;
 		n--;
 	}
 	j = 0;
-	while(j < i)
+	while (j < i)
 	{
 		temp[j] = xdest[j];
 		j++;

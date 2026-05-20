@@ -15,10 +15,10 @@
 char	*ft_strrchr(char *src, int n)
 {
 	char	*x;
-	
-	while(*src)
+
+	while (*src)
 	{
-		if(*src == n)
+		if (*src == n)
 		{
 			x = src;
 		}

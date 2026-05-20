@@ -17,7 +17,7 @@ void	ft_bzero(void *ptr, size_t n)
 	unsigned char	*ptd;
 
 	ptd = ptr;
-	while(n > 0)
+	while (n > 0)
 	{
 		*ptd = '\0';
 		ptr++;

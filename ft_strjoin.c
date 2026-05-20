@@ -20,14 +20,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
-	res = malloc(sizeof(char) * (s1 + s2 + 1));
-	while(*s1)
+	res = malloc(sizeof(char) * (lens1 + lens2 + 1));
+	while (*s1)
 	{
 		*res = *s1;
 		s1++;
 		res++;
 	}
-	while(*s2)
+	while (*s2)
 	{
 		*res = *s2;
 		s2++;

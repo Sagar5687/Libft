@@ -20,10 +20,10 @@ void	*ft_calloc(size_t nmeb, size_t size)
 
 	total = nmeb * size;
 	ptr = (unsigned char *)malloc(total);
-	if(!ptr)
+	if (!ptr)
 		return (NULL);
 	i = 0;
-	while(i < total)
+	while (i < total)
 	{
 		ptr[i] = 0;
 		i++;
