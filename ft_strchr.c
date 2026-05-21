@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_stchr(char *src, int n)
+char	*ft_strchr(char *src, int n)
 {
 	while (*src)
 	{

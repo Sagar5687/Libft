@@ -2,6 +2,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if(fd < 0)
+		return ;
 	char	*temp;
 
 	temp = ft_itoa(n);

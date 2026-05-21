@@ -18,6 +18,8 @@ void	*ft_calloc(size_t nmeb, size_t size)
 	unsigned char	*ptr;
 	size_t	i;
 
+	if (size != 0 && nmeb > SIZE_MAX / size)
+		return (NULL);
 	total = nmeb * size;
 	ptr = (unsigned char *)malloc(total);
 	if (!ptr)

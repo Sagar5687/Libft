@@ -25,7 +25,7 @@ static int	stlen(char *src)
 	return (i);
 }
 
-static char	*stcpy(char *src, char *dest)
+static void stcpy(const char *src, char *dest)
 {
 	while (*src != '\0')
 	{
@@ -34,14 +34,15 @@ static char	*stcpy(char *src, char *dest)
 		src++;
 	}
 	*dest = '\0';
-	return (dest);
 }
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*str;
 
 	str = (char *)malloc(sizeof(char) * (stlen(src) + 1));
+	if (!str)
+		return (NULL);
 	stcpy(src, str);
 	return (str);
 }

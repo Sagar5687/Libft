@@ -19,8 +19,8 @@ void	ft_bzero(void *ptr, size_t n)
 	ptd = ptr;
 	while (n > 0)
 	{
-		*ptd = '\0';
-		ptr++;
+		*ptd = 0;
+		ptd++;
 		n--;
 	}
 }

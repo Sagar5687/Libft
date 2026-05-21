@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	substring_check(char *temp1, char *temp2, size_t n)
+static int	substring_check(const char *temp1, const char *temp2, size_t n)
 {
 	while (*temp1 && n > 0)
 	{
@@ -31,16 +31,16 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 
 	l = n;
 	if (! *to_find)
-		return (str);
+		return ((char *)str);
 	while (n > 0 && *str)
 	{
 		if (*str == *to_find)
 		{
 			if (substring_check(to_find, str, n))
-				return (str);
+				return ((char *)str);
 		}
 		str++;
 		n--;
 	}
-	return (0);
+	return (NULL);
 }
