@@ -18,12 +18,11 @@ int	ft_atoi(const char *s)
 	int	flag;
 
 	n = 0;
-	if (*s)
+	flag = 0;
+	if (!s)
 		return (0);
 	while ((*s >= 9 && *s <= 13) || *s == ' ')
-	{
 		s++;
-	}
 	if (*s == '+' || *s == '-')
 	{
 		if (*s == '-')
@@ -32,7 +31,7 @@ int	ft_atoi(const char *s)
 	}
 	while (*s >= '0' && *s <= '9')
 	{
-		n += (n * 10) + (*s - '0');
+		n = (n * 10) + (*s - '0');
 		s++;
 	}
 	if (flag == 1)

@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sturuvek <sturuvek@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 15:45:04 by sturuvek          #+#    #+#             */
-/*   Updated: 2026/04/29 17:39:33 by sturuvek         ###   ########.fr       */
+/*   Created: 2026/05/21 16:15:40 by sturuvek          #+#    #+#             */
+/*   Updated: 2026/05/21 16:28:04 by sturuvek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strampi(char const *s, char (*f)(unsigned int,char))
 {
-	unsigned char	*xdest;
-	const unsigned char	*xsrc;
-
-	xdest = (unsigned char *)dest;
-	xsrc = (unsigned char *)src;
-	while (n > 0)
+	int	i;
+	int	len;
+	char	*res;
+	
+	if(!s || !f)
+		return (NULL);
+	len = ft_strlen(s);
+	i = 0;
+	res = malloc(len + 1);
+	if (!res)
+		return (NULL);
+	while (i < len)
 	{
-		*xdest = *xsrc;
-		xdest++;
-		xsrc++;
-		n--;
+		res[i] = f(i, s[i]);
+		i++;
 	}
-	return (dest);
+	res[i] = '\0';
+	return (res);
 }

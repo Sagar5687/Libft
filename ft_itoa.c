@@ -15,40 +15,29 @@ static char	*reverse_string(char *res, int len)
 	}
 	return (res);
 }
-
-char	*ft_itoa(int n)
+static int	num_len(long n)
 {
-	char	*res;
 	int	len;
-	int	x;
-	int	flag;
-	int	i;
-	
-	i = 0;
-	x = n;
+
 	len = 0;
-	flag = 0;
-	if(x < 0)
-	{
-		flag = 1;
-		x *= -1;
-		n *= -1;
-	}
-	if(x == 0)
-		len = 1;
+	if (n == 0)
+		return (1);
 	else
 	{
-		while(x > 0)
+		while(n > 0)
 		{
-			len++;
-			x /= 10;
+			len += 1;
+			n /= 10;
 		}
 	}
-	res = malloc(sizeof(char) * (len + flag + 1));
-	if(!res)
-		return (NULL);
-	if(n == 0)
-		res[i++] = '0';
+	return (len);
+}
+
+static void	calc_itoa(long n, char *res, int flag, int len)
+{
+	int	i;
+
+	i = 0;
 	while(n > 0)
 	{
 		res[i] = ((n % 10) + '0');
@@ -62,12 +51,32 @@ char	*ft_itoa(int n)
 	}
 	res = reverse_string(res, len + flag);
 	res[i] = '\0';
-	return (res);
 }
 
-#include <stdio.h>
-int main()
+char	*ft_itoa(int n)
 {
-	char	*ewa = ft_itoa(-2147483648);
-	printf("%s \n",ewa);
+	char	*res;
+	int	len;
+	int	flag;
+	long	nb;
+	
+	nb = n;
+	len = 0;
+	flag = 0;
+	if(nb < 0)
+	{
+		flag = 1;
+		nb *= -1;
+	}
+	len = num_len(nb);
+	res = malloc(sizeof(char) * (len + flag + 1));
+	if(!res)
+		return (NULL);
+	if(nb == 0)
+	{
+		res[0] = '0';
+		res[1] = '\0';
+	}
+	calc_itoa(nb, res, flag, len);
+	return (res);
 }
