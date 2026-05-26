@@ -76,6 +76,7 @@ char	*ft_itoa(int n)
 	{
 		res[0] = '0';
 		res[1] = '\0';
+		return (res);
 	}
 	calc_itoa(nb, res, flag, len);
 	return (res);

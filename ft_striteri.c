@@ -10,14 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	i;
 	int	len;
 
-	len = ft_strlen(s);
+	while (!s || !f)
+		return ;
+	len = ft_strlen((const char *)s);
 	i = 0;
-	while (i < len)
+	while (i < (unsigned int)len)
 	{
 		f(i, &s[i]);
 		i++;

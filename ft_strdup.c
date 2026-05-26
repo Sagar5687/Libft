@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	stlen(char *src)
+static int	stlen(const char *src)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ static int	stlen(char *src)
 	return (i);
 }
 
-static void stcpy(const char *src, char *dest)
+static void	stcpy(char *dest, const char *src)
 {
 	while (*src != '\0')
 	{
@@ -43,6 +43,6 @@ char	*ft_strdup(const char *src)
 	str = (char *)malloc(sizeof(char) * (stlen(src) + 1));
 	if (!str)
 		return (NULL);
-	stcpy(src, str);
+	stcpy(str, src);
 	return (str);
 }

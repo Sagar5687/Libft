@@ -14,13 +14,23 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if(fd < 0)
-		return ;
-	char	*temp;
+	long	nb;
+	char	c;
 
-	temp = ft_itoa(n);
-	if(!temp)
+	if (fd < 0)
 		return ;
-	write(fd, temp, ft_strlen(temp));
-	free(temp);
+
+	nb = n;
+
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb *= -1;
+	}
+
+	if (nb >= 10)
+		ft_putnbr_fd(nb / 10, fd);
+
+	c = (nb % 10) + '0';
+	write(fd, &c, 1);
 }
