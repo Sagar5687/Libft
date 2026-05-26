@@ -1,5 +1,5 @@
 # Libft
-*This project has been created as part of the 42 curriculum by kaeiu.*
+*This project has been created as part of the 42 curriculum by sturuvek.*
 
 # Libft
 
@@ -7,7 +7,7 @@
 
 Libft is the first project in the 42 curriculum and focuses on recreating a custom version of the standard C library.
 
-The goal of the project is to better understand low-level programming concepts in C by reimplementing commonly used libc functions from scratch, without relying on the original implementations. The project also introduces additional utility functions and linked list manipulation functions that will be reused throughout future projects in the curriculum.
+The goal of the project is to better understand basic programming concepts in C by reimplementing commonly used libc functions from scratch, without relying on the original implementations. The project also introduces additional utility functions and linked list manipulation functions that will be reused throughout future projects in the curriculum.
 
 This project strengthens understanding of:
 
@@ -26,7 +26,7 @@ All functions were written in pure C and follow the 42 Norm coding standard.
 
 # Library Overview
 
-The library contains implementations of standard libc functions, additional utility functions, and bonus linked list functions.
+The library contains implementations of standard libc functions, utility functions, and linked list functions.
 
 ---
 
@@ -108,10 +108,6 @@ The library contains implementations of standard libc functions, additional util
 
 ---
 
-# Bonus Functions
-
-The bonus section introduces linked list manipulation.
-
 ## Linked List Functions
 
 | Function | Description |
@@ -138,12 +134,6 @@ Compile the mandatory library:
 make
 ```
 
-Compile the bonus functions:
-
-```bash
-make bonus
-```
-
 ---
 
 ## Makefile Rules
@@ -151,7 +141,6 @@ make bonus
 | Command | Action |
 |---------|--------|
 | `make` | Compile mandatory functions |
-| `make bonus` | Compile bonus functions |
 | `make clean` | Remove object files |
 | `make fclean` | Remove object files and library |
 | `make re` | Recompile everything |
@@ -170,12 +159,6 @@ Compile with the library:
 
 ```bash
 cc main.c libft.a
-```
-
-or
-
-```bash
-cc main.c -L. -lft
 ```
 
 ---
@@ -205,19 +188,6 @@ Output:
 ```bash
 Hello World!
 ```
-
----
-
-# Technical Choices
-
-Several implementation decisions were made during development:
-
-- Defensive NULL checks were added to avoid crashes.
-- Recursive implementation was used for `ft_putnbr_fd`.
-- Memory allocations were protected to prevent leaks.
-- Linked list utilities were implemented using reusable helper functions.
-- Functions were designed to mimic original libc behavior as closely as possible.
-
 ---
 
 # Testing
@@ -226,10 +196,8 @@ The library was tested using:
 
 - Custom test cases
 - Edge case testing
-- Memory leak checks
-- Protected malloc tests
 - `libft-unit-test`
-- `francinette`
+- `Supreme-Tester-Libft`
 
 ---
 
@@ -240,17 +208,13 @@ The library was tested using:
 - The C Programming Language — Brian W. Kernighan & Dennis M. Ritchie
 - Linux manual pages:
   - https://man7.org/linux/man-pages/
-- C reference:
-  - https://cplusplus.com/reference/cstring/
-  - https://en.cppreference.com/w/c
 
 ---
 
 ## Tutorials and References
 
-- GeeksForGeeks articles on pointers and memory
+- GeeksForGeeks articles on memory, malloc, file desrciptors
 - 42 intra subject documentation
-- YouTube tutorials about pointers, linked lists, and memory allocation
 
 ---
 
@@ -277,8 +241,7 @@ AI assistance was used only as a learning and debugging aid. All implementations
 ├── libft.h
 ├── libft.a
 ├── ft_*.c
-├── ft_*.o
-└── bonus/
+└── ft_*.o
 ```
 
 ---
@@ -296,6 +259,6 @@ This project follows:
 
 # Author
 
-## kaeiu
+## sturuvek(Sagar)
 
 42 School Student

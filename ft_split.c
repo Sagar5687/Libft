@@ -38,33 +38,23 @@ static void	word_extractor(const char *s, char c, char **res, int word)
 	{
 		while (*s == c)
 			s++;
-
 		if (!*s)
 			break ;
-
 		len = 0;
 		while (s[len] && s[len] != c)
 			len++;
-
 		res[word] = malloc(sizeof(char) * (len + 1));
 		if (!res[word])
-		{
-			res[word] = NULL;
 			return ;
-		}
-
 		i = 0;
 		while (i < len)
 		{
 			res[word][i] = s[i];
 			i++;
 		}
-
-		res[word][i] = '\0';
-		word++;
+		res[word++][i] = '\0';
 		s += len;
 	}
-
 	res[word] = NULL;
 }
 
@@ -76,15 +66,11 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-
 	nw = number_words(s, c);
-
 	res = malloc(sizeof(char *) * (nw + 1));
 	if (!res)
 		return (NULL);
-
 	word = 0;
 	word_extractor(s, c, res, word);
-
 	return (res);
 }

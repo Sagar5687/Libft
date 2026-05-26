@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sturuvek <sturuvek@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/26 18:46:15 by sturuvek          #+#    #+#             */
+/*   Updated: 2026/05/26 18:52:54 by sturuvek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static char	*reverse_string(char *res, int len)
+static char	*reverse_string(char *res, long len)
 {
+	long	i;
 	char	temp;
-	int	i;
-	
+
 	i = 0;
-	while(i < (len / 2))
+	while (i < (len / 2))
 	{
 		temp = res[i];
 		res[i] = res[len - i - 1];
@@ -15,16 +27,17 @@ static char	*reverse_string(char *res, int len)
 	}
 	return (res);
 }
+
 static int	num_len(long n)
 {
-	int	len;
+	long	len;
 
 	len = 0;
 	if (n == 0)
 		return (1);
 	else
 	{
-		while(n > 0)
+		while (n > 0)
 		{
 			len += 1;
 			n /= 10;
@@ -33,18 +46,18 @@ static int	num_len(long n)
 	return (len);
 }
 
-static void	calc_itoa(long n, char *res, int flag, int len)
+static void	calc_itoa(long n, char *res, long flag, long len)
 {
 	int	i;
 
 	i = 0;
-	while(n > 0)
+	while (n > 0)
 	{
 		res[i] = ((n % 10) + '0');
 		n /= 10;
 		i++;
 	}
-	if(flag == 1)
+	if (flag == 1)
 	{
 		res[i] = '-';
 		i++;
@@ -56,23 +69,23 @@ static void	calc_itoa(long n, char *res, int flag, int len)
 char	*ft_itoa(int n)
 {
 	char	*res;
-	int	len;
-	int	flag;
 	long	nb;
-	
+	long	len;
+	long	flag;
+
 	nb = n;
 	len = 0;
 	flag = 0;
-	if(nb < 0)
+	if (nb < 0)
 	{
 		flag = 1;
 		nb *= -1;
 	}
 	len = num_len(nb);
 	res = malloc(sizeof(char) * (len + flag + 1));
-	if(!res)
+	if (!res)
 		return (NULL);
-	if(nb == 0)
+	if (nb == 0)
 	{
 		res[0] = '0';
 		res[1] = '\0';

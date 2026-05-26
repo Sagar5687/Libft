@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sturuvek <sturuvek@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 15:45:04 by sturuvek          #+#    #+#             */
-/*   Updated: 2026/04/29 17:39:33 by sturuvek         ###   ########.fr       */
+/*   Created: 2026/05/05 15:36:05 by sturuvek          #+#    #+#             */
+/*   Updated: 2026/05/05 15:48:05 by sturuvek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*xdest;
-	const unsigned char	*xsrc;
+	unsigned char	*d;
+	unsigned char	*s;
 
 	if (!dest && !src)
 		return (NULL);
-	xdest = (unsigned char *)dest;
-	xsrc = (unsigned char *)src;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
 	while (n > 0)
 	{
-		*xdest = *xsrc;
-		xdest++;
-		xsrc++;
+		*d++ = *s++;
 		n--;
 	}
 	return (dest);

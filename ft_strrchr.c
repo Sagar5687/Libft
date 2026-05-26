@@ -15,8 +15,8 @@
 char	*ft_strrchr(const char *src, int n)
 {
 	char	*x;
-	x = NULL;
 
+	x = NULL;
 	while (*src)
 	{
 		if (*src == (char)n)
@@ -25,7 +25,7 @@ char	*ft_strrchr(const char *src, int n)
 		}
 		src++;
 	}
-	if((char)n == '\0')
+	if ((char)n == '\0')
 		return ((char *)src);
 	return (x);
 }
